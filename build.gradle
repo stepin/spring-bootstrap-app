@@ -3,11 +3,17 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'org.asciidoctor.convert' version '1.5.8'
 	id 'java'
+	id "org.sonarqube" version "2.8"
+	id 'jacoco'
 }
 
 group = 'name.stepin'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
+
+bootJar {
+	archivesBaseName = 'api'
+}
 
 configurations {
 	developmentOnly
@@ -53,6 +59,16 @@ compileJava {
 	options.compilerArgs << "-Amapstruct.defaultComponentModel=spring"
 
 	options.setAnnotationProcessorGeneratedSourcesDirectory( file("$projectDir/src/generated/java"))
+}
+
+jacoco {
+	toolVersion = "0.8.5"
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+	}
 }
 
 test {
