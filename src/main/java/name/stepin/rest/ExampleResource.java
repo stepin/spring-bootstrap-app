@@ -3,8 +3,8 @@ package name.stepin.rest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import name.stepin.config.ApplicationProperties;
+import name.stepin.config.GitInfo;
 import name.stepin.service.ExampleService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +18,7 @@ public class ExampleResource {
 
     private final ExampleService exampleService;
     private final ApplicationProperties applicationProperties;
-    @Value("${git.branch}")
-    private String gitBranch;
+    private final GitInfo gitInfo;
 
     @GetMapping(value = "", produces = MediaType.TEXT_PLAIN_VALUE)
     public String returnMetrics() {
@@ -36,6 +35,6 @@ public class ExampleResource {
     @GetMapping(value = "git_branch", produces = MediaType.TEXT_PLAIN_VALUE)
     public String returnGitBranch() {
         log.info("returnGitBranch");
-        return "git_branch: " + gitBranch;
+        return "git_branch: " + gitInfo.getBranch();
     }
 }
