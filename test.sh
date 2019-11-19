@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./gradlew clean test sonarqube
+./gradlew clean test sonarqube --info
