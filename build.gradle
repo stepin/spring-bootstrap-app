@@ -74,7 +74,8 @@ jacocoTestReport {
 	}
 }
 
-jib.to.image = 'stepin/spring-template-app'
+jib.to.image = "stepin/spring-template-app:${version}"
+jib.to.tags = ['latest']
 
 test {
 	outputs.dir snippetsDir
