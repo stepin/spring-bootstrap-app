@@ -2,7 +2,7 @@ package name.stepin.health;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -16,7 +16,7 @@ import org.springframework.boot.actuate.health.Status;
 public class RandomHealthCheckerTests {
 
   @Test
-  void healthIsUp() {
+  public void healthIsUp() {
     PowerMockito.mockStatic(Math.class);
     PowerMockito.when(Math.random()).thenReturn(0.6);
 
@@ -30,7 +30,7 @@ public class RandomHealthCheckerTests {
   }
 
   @Test
-  void healthIsDown() {
+  public void healthIsDown() {
     PowerMockito.mockStatic(Math.class);
     PowerMockito.when(Math.random()).thenReturn(0.1);
 

@@ -3,7 +3,7 @@ package name.stepin.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class RestMapperTests {
 
@@ -20,4 +20,5 @@ public class RestMapperTests {
     assertThat( restModel.getId() ).isEqualTo( "id1" );
     assertThat( restModel.getTitle() ).isEqualTo( "name1" );
   }
+
 }
