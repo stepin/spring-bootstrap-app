@@ -13,6 +13,7 @@ build/
 .settings
 .springBeans
 .sts4-cache
+.gradletasknamecache
 
 ### IntelliJ IDEA ###
 .idea
