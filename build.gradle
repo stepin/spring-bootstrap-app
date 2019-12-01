@@ -53,6 +53,8 @@ dependencies {
 	compile "org.mapstruct:mapstruct:${mapstructVersion}"
 	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 	compile "io.micrometer:micrometer-registry-prometheus:${micrometerRegistryPrometheusVersion}"
+	compile group: 'org.powermock', name: 'powermock-module-junit4', version: powermockitoVersion
+	compile group: 'org.powermock', name: 'powermock-api-mockito2', version: powermockitoVersion
 }
 
 compileJava {
