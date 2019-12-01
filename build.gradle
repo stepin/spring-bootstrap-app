@@ -56,6 +56,9 @@ dependencies {
 	compile "io.springfox:springfox-swagger2:${springfoxVersion}"
 	compile "io.springfox:springfox-bean-validators:${springfoxVersion}"
 	compile "io.springfox:springfox-swagger-ui:${springfoxVersion}"
+	compile "com.graphql-java:graphql-spring-boot-starter:${graphqlStarterVersion}"
+	compile "com.graphql-java:graphql-java-tools:${graphqlToolsVersion}"
+	compile "com.graphql-java:graphiql-spring-boot-starter:${graphiqlStarterVersion}"
 }
 
 compileJava {

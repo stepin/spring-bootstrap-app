@@ -1,0 +1,7 @@
+type Query {
+    example:String
+}
+
+type Mutation {
+    createExample(exampleDate: String):String
+}
