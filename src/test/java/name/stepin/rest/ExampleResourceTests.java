@@ -9,18 +9,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import name.stepin.config.ApplicationProperties;
 import name.stepin.config.GitInfo;
 import name.stepin.service.ExampleService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(ExampleResource.class)
-public class ExampleResourceTests {
+class ExampleResourceTests {
 
   @Autowired
   private MockMvc mvc;
@@ -35,7 +32,7 @@ public class ExampleResourceTests {
   private GitInfo gitInfo;
 
   @Test
-  public void exampleResource_whenGet_thenReturnTextDate()
+  void exampleResource_whenGet_thenReturnTextDate()
       throws Exception {
     given(service.dateString()).willReturn("myDate");
 
@@ -46,7 +43,7 @@ public class ExampleResourceTests {
   }
 
   @Test
-  public void exampleResource_whenGetAppConfig_thenReturnTimerDelay()
+  void exampleResource_whenGetAppConfig_thenReturnTimerDelay()
       throws Exception {
     given(applicationProperties.getExampleTimerFixedDelayMs()).willReturn(1234);
 
@@ -57,7 +54,7 @@ public class ExampleResourceTests {
   }
 
   @Test
-  public void exampleResource_whenGetGitBranch_thenReturnIt()
+  void exampleResource_whenGetGitBranch_thenReturnIt()
       throws Exception {
     given(gitInfo.getBranch()).willReturn("master");
 

@@ -47,17 +47,12 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.jupiter', module: 'junit-jupiter'
-		exclude group: 'org.mockito', module: 'mockito-junit-jupiter'
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	testImplementation group: 'junit', name: 'junit', version: junitVersion
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 	compile "org.mapstruct:mapstruct:${mapstructVersion}"
 	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 	compile "io.micrometer:micrometer-registry-prometheus:${micrometerRegistryPrometheusVersion}"
-	testImplementation group: 'org.powermock', name: 'powermock-module-junit4', version: powermockitoVersion
-	testImplementation group: 'org.powermock', name: 'powermock-api-mockito2', version: powermockitoVersion
 }
 
 compileJava {
@@ -84,7 +79,7 @@ jib.to.tags = ['latest']
 
 test {
 	outputs.dir snippetsDir
-	useJUnit()
+	useJUnitPlatform()
 }
 
 asciidoctor {

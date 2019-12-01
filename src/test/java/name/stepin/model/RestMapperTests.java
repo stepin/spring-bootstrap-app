@@ -1,14 +1,13 @@
 package name.stepin.model;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RestMapperTests {
+class RestMapperTests {
 
   @Test
-  public void shouldMapCarToDto() {
+  void shouldMapCarToDto() {
     //given
     DbModel dbModel = new DbModel( "id1", "name1", "secret1" );
 
