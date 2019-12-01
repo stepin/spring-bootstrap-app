@@ -44,4 +44,27 @@ public class ExampleResourceTests {
         .andExpect(status().isOk())
         .andExpect(content().string("myDate"));
   }
+
+  @Test
+  public void exampleResource_whenGetAppConfig_thenReturnTimerDelay()
+      throws Exception {
+    given(applicationProperties.getExampleTimerFixedDelayMs()).willReturn(1234);
+
+    mvc.perform(get("/example/app_config")
+        .contentType(MediaType.TEXT_PLAIN_VALUE))
+        .andExpect(status().isOk())
+        .andExpect(content().string(containsString("1234")));
+  }
+
+  @Test
+  public void exampleResource_whenGetGitBranch_thenReturnIt()
+      throws Exception {
+    given(gitInfo.getBranch()).willReturn("master");
+
+    mvc.perform(get("/example/git_branch")
+        .contentType(MediaType.TEXT_PLAIN_VALUE))
+        .andExpect(status().isOk())
+        .andExpect(content().string("git_branch: master"));
+  }
+
 }
