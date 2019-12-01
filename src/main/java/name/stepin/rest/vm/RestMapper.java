@@ -1,5 +1,6 @@
-package name.stepin.model;
+package name.stepin.rest.vm;
 
+import name.stepin.domain.DbModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

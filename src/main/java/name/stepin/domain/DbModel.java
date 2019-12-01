@@ -1,4 +1,4 @@
-package name.stepin.model;
+package name.stepin.domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

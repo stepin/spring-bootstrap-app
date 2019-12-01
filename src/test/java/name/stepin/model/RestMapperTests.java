@@ -2,6 +2,9 @@ package name.stepin.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import name.stepin.domain.DbModel;
+import name.stepin.rest.vm.RestMapper;
+import name.stepin.rest.vm.RestModel;
 import org.junit.jupiter.api.Test;
 
 class RestMapperTests {

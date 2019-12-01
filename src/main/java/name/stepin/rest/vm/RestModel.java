@@ -1,4 +1,4 @@
-package name.stepin.model;
+package name.stepin.rest.vm;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
