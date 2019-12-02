@@ -18,8 +18,8 @@ class RandomHealthCheckerTests {
     Health.Builder builder = new Builder();
 
     checker.doHealthCheck(builder);
-
     Health health = builder.build();
+
     assertThat(health.getStatus()).isEqualTo(Status.UP);
   }
 
@@ -30,8 +30,8 @@ class RandomHealthCheckerTests {
     Health.Builder builder = new Builder();
 
     checker.doHealthCheck(builder);
-
     Health health = builder.build();
+
     assertThat(health.getStatus()).isEqualTo(Status.DOWN);
   }
 }
