@@ -1,0 +1,3 @@
+mutation {
+    createExample(exampleDate: "2016-08-16")
+}

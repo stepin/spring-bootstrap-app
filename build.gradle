@@ -59,6 +59,7 @@ dependencies {
 	compile "com.graphql-java:graphql-spring-boot-starter:${graphqlStarterVersion}"
 	compile "com.graphql-java:graphql-java-tools:${graphqlToolsVersion}"
 	compile "com.graphql-java:graphiql-spring-boot-starter:${graphiqlStarterVersion}"
+	testCompile "com.graphql-java:graphql-spring-boot-test-autoconfigure:${graphqlTestStarterVersion}"
 }
 
 compileJava {
