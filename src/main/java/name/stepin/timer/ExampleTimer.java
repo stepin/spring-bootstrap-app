@@ -31,7 +31,7 @@ public class ExampleTimer {
 
     private void randomSleep() {
         try {
-            Thread.sleep(random.nextInt(10));
+            Thread.sleep(random.nextInt(1000));
         } catch (InterruptedException e) {
             log.warn("error in sleep", e);
             Thread.currentThread().interrupt();
