@@ -10,14 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class ExampleService {
 
-    @Transactional(readOnly = true)
-    public String dateString() {
-        return LocalDateTime.now().toString();
-    }
+  @Transactional(readOnly = true)
+  public String dateString() {
+    return LocalDateTime.now().toString();
+  }
 
-    @Transactional
-    public String create(String date) {
-        return date;
-    }
+  @Transactional
+  public String create(String date) {
+    return date;
+  }
 
 }

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 public class ApplicationProperties {
 
-    private int exampleTimerInitialDelayMs;
-    private int exampleTimerFixedDelayMs;
+  private int exampleTimerInitialDelayMs;
+  private int exampleTimerFixedDelayMs;
 
 }

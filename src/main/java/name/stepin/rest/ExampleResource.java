@@ -16,25 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ExampleResource {
 
-    private final ExampleService exampleService;
-    private final ApplicationProperties applicationProperties;
-    private final GitInfo gitInfo;
+  private final ExampleService exampleService;
+  private final ApplicationProperties applicationProperties;
+  private final GitInfo gitInfo;
 
-    @GetMapping(value = "", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String returnMetrics() {
-        log.info("returnMetrics");
-        return exampleService.dateString();
-    }
+  @GetMapping(value = "", produces = MediaType.TEXT_PLAIN_VALUE)
+  public String returnMetrics() {
+    log.info("returnMetrics");
+    return exampleService.dateString();
+  }
 
-    @GetMapping(value = "app_config", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String returnAppConfig() {
-        log.info("returnAppConfig");
-        return "exampleTimerFixedDelayMs: " + applicationProperties.getExampleTimerFixedDelayMs();
-    }
+  @GetMapping(value = "app_config", produces = MediaType.TEXT_PLAIN_VALUE)
+  public String returnAppConfig() {
+    log.info("returnAppConfig");
+    return "exampleTimerFixedDelayMs: " + applicationProperties.getExampleTimerFixedDelayMs();
+  }
 
-    @GetMapping(value = "git_branch", produces = MediaType.TEXT_PLAIN_VALUE)
-    public String returnGitBranch() {
-        log.info("returnGitBranch");
-        return "git_branch: " + gitInfo.getBranch();
-    }
+  @GetMapping(value = "git_branch", produces = MediaType.TEXT_PLAIN_VALUE)
+  public String returnGitBranch() {
+    log.info("returnGitBranch");
+    return "git_branch: " + gitInfo.getBranch();
+  }
 }

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class ExampleQueryTests {
 
   @Test
-  void checkGetExample(){
+  void checkGetExample() {
     ExampleService service = mock(ExampleService.class);
     when(service.dateString()).thenReturn("dateString");
     ExampleQuery query = new ExampleQuery(service);

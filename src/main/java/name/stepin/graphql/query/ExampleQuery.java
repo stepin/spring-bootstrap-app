@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 public class ExampleQuery implements GraphQLQueryResolver {
+
   private final ExampleService service;
 
   public String getExample() {

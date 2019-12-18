@@ -7,18 +7,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class RandomHealthChecker extends AbstractHealthIndicator {
 
-    @Override
-    protected void doHealthCheck(Builder builder) {
-        boolean isUp = getRandomValue() > 0.5;
-        if (isUp) {
-            builder.up().withDetail("Random Status", "working");
-        } else {
-            builder.down().withDetail("Random Status", "it's random");
-        }
+  @Override
+  protected void doHealthCheck(Builder builder) {
+    boolean isUp = getRandomValue() > 0.5;
+    if (isUp) {
+      builder.up().withDetail("Random Status", "working");
+    } else {
+      builder.down().withDetail("Random Status", "it's random");
     }
+  }
 
-    double getRandomValue() {
-        return Math.random();
-    }
+  double getRandomValue() {
+    return Math.random();
+  }
 
 }
